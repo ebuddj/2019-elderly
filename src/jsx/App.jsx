@@ -103,7 +103,7 @@ class App extends Component {
     }
     return (
       <div className={style.app}>
-        <h3>{this.state.year}</h3>
+        <h3>Share of over 65 year olds per country in {this.state.year}</h3>
         <div>
           <Polar data={this.state.data} options={options} />
         </div>
