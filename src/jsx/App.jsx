@@ -109,7 +109,6 @@ class App extends Component {
   render() {
     let options = {
       onHover:function(event) {
-        // console.log(event)
       },
       tooltips: {
         enabled: false,
@@ -147,20 +146,20 @@ class App extends Component {
         }
       },
       responsive: true,
-      tooltipEvents: ['click'],
       scale: {
         ticks: {
           callback:function(value) {
             return value + '%';
           },
-          fontSize: 11,
-          fontStyle:'normal',
           fontFamily: 'verdana',
-          max: 20,
+          fontSize: 11,
+          fontStyle: 'normal',
+          max: 27,
           min: 0,
-          stepSize: 2
+          stepSize: 3
         }
       },
+      maintainAspectRatio: false,
       legend: {
         display: false,
       }
@@ -168,9 +167,10 @@ class App extends Component {
     return (
       <div className={style.app}>
         <h3>Share of over 65 year olds per country in {this.state.year}</h3>
-        <div>
-          <Polar data={this.state.data} options={options} />
+        <div className={style.chart_container}>
+          <Polar data={this.state.data} options={options} width={1} height={1}/>
         </div>
+        <h3>Conclusion: We are getting older</h3>
       </div>
     );
   }
