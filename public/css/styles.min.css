@@ -43,11 +43,7 @@ body {
   overflow: hidden;
 }
 .app___2khK2 .chart_container___3Jzlm canvas {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
   margin: auto;
-  max-height: 800px;
-  max-width: 800px;
+  max-width: 90vh;
 }
 

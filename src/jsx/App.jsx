@@ -175,6 +175,9 @@ class App extends Component {
       <div className={style.app}>
         <h3>Share of over 65 year olds per country in {this.state.year}</h3>
         <div className={style.chart_container}>
+          <legend>
+
+          </legend>
           <Polar data={this.state.data} options={options} width={400} height={400} />
         </div>
         <h3>Conclusion: We are getting older</h3>
