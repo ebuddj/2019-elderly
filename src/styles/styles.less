@@ -5,15 +5,49 @@ body {
   padding: 0;
 }
 .app {
-  height: auto;
+  text-align: center;
   h3 {
     font-family: verdana;
     text-align: center;
+    text-transform: uppercase;
   }
   .chart_container {
-    overflow: hidden;
+    legend {
+      margin-top: -15%;
+      text-align: center;
+      z-index: 1;
+      div {
+        color: #fff;
+        display: inline-block;
+        font-family: verdana;
+        font-size: 18px;
+        letter-spacing: 0.02em;
+        margin: 2px 2px;
+        padding: 5px;
+        text-transform: uppercase;
+        &.africa {
+          background-color: rgba(230, 25, 75, 0.4);
+        }
+        &.asia {
+          background-color: rgba(60, 180, 75, 0.4);
+        }
+        &.europe {
+          background-color: rgba(245, 130, 49, 0.4);
+        }
+        &.n_america {
+          background-color: rgba(128, 0, 0, 0.4);
+        }
+        &.oceania {
+          background-color: rgba(240, 50, 230, 0.4);
+        }
+        &.s_america {
+          background-color: rgba(0, 0, 117, 0.4);
+
+        }
+      }
+    }
     canvas {
-      margin: auto;
+      margin: auto auto;
       max-width: 90vh;
     }
   }

@@ -25,6 +25,7 @@ const order = {
 class App extends Component {
   constructor() {
     super();
+    this.canvas = React.createRef()
     this.state = {
       data:{
         datasets:[{
@@ -175,12 +176,17 @@ class App extends Component {
       <div className={style.app}>
         <h3>Share of over 65 year olds per country in {this.state.year}</h3>
         <div className={style.chart_container}>
+          <Polar ref={this.canvas} data={this.state.data} options={options} width={size} height={size} />
           <legend>
-
+            <div className={style.africa}>Africa</div>
+            <div className={style.asia}>Asia</div>
+            <div className={style.europe}>Europe</div>
+            <div className={style.n_america}>N. America</div>
+            <div className={style.oceania}>Oceania</div>
+            <div className={style.s_america}>S. America</div>
           </legend>
-          <Polar data={this.state.data} options={options} width={400} height={400} />
         </div>
-        <h3>Conclusion: We are getting older</h3>
+        <h3>Conclusion:<br />We are getting older</h3>
       </div>
     );
   }
