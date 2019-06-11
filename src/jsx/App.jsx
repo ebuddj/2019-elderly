@@ -175,12 +175,13 @@ class App extends Component {
         <div className={style.chart_container}>
           <Polar data={this.state.data} options={options} width={size} height={size} />
           <legend>
-            <div onClick={() => this.selectContinent('Africa')} className={style.africa} style={this.state.active_continents.includes('Africa') ? {opacity: 1} : {}}>Africa</div>
-            <div onClick={() => this.selectContinent('Asia')} className={style.asia} style={this.state.active_continents.includes('Asia') ? {opacity: 1} : {}}>Asia</div>
-            <div onClick={() => this.selectContinent('Europe')} className={style.europe} style={this.state.active_continents.includes('Europe') ? {opacity: 1} : {}}>Europe</div>
-            <div onClick={() => this.selectContinent('N. America')} className={style.n_america} style={this.state.active_continents.includes('N. America') ? {opacity: 1} : {}}>N. America</div>
-            <div onClick={() => this.selectContinent('Oceania')} className={style.oceania} style={this.state.active_continents.includes('Oceania') ? {opacity: 1} : {}}>Oceania</div>
-            <div onClick={() => this.selectContinent('S. America')} className={style.s_america} style={this.state.active_continents.includes('S. America') ? {opacity: 1} : {}}>S. America</div>
+            <div>Filter by continent</div>
+            <span onClick={() => this.selectContinent('Africa')} className={style.africa} style={this.state.active_continents.includes('Africa') ? {opacity: 1} : {}}>Africa</span>
+            <span onClick={() => this.selectContinent('Asia')} className={style.asia} style={this.state.active_continents.includes('Asia') ? {opacity: 1} : {}}>Asia</span>
+            <span onClick={() => this.selectContinent('Europe')} className={style.europe} style={this.state.active_continents.includes('Europe') ? {opacity: 1} : {}}>Europe</span>
+            <span onClick={() => this.selectContinent('N. America')} className={style.n_america} style={this.state.active_continents.includes('N. America') ? {opacity: 1} : {}}>N. America</span>
+            <span onClick={() => this.selectContinent('Oceania')} className={style.oceania} style={this.state.active_continents.includes('Oceania') ? {opacity: 1} : {}}>Oceania</span>
+            <span onClick={() => this.selectContinent('S. America')} className={style.s_america} style={this.state.active_continents.includes('S. America') ? {opacity: 1} : {}}>S. America</span>
           </legend>
         </div>
         <h3>Conclusion:<br />We are getting older</h3>
