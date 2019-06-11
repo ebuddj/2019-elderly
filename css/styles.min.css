@@ -40,13 +40,21 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
+.app___2khK2 .chart_container___3Jzlm canvas {
+  position: relative;
+  z-index: 1;
+  margin: auto auto;
+  max-width: 90vh;
+}
 .app___2khK2 .chart_container___3Jzlm legend {
   margin-top: -15%;
+  position: relative;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
 }
 .app___2khK2 .chart_container___3Jzlm legend div {
   color: #fff;
+  cursor: pointer;
   display: inline-block;
   font-family: verdana;
   font-size: 18px;
@@ -56,25 +64,30 @@ body {
   text-transform: uppercase;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.africa___2MJJ- {
-  background-color: rgba(230, 25, 75, 0.4);
+  background-color: #e6194b;
+  opacity: 0.4;
+}
+.app___2khK2 .chart_container___3Jzlm legend div.africa___2MJJ-.active___39kF0 {
+  opacity: 1;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.asia___3VCC9 {
-  background-color: rgba(60, 180, 75, 0.4);
+  background-color: #3cb44b;
+  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.europe___2Znoa {
-  background-color: rgba(245, 130, 49, 0.4);
+  background-color: #f58231;
+  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.n_america___MCqwf {
-  background-color: rgba(128, 0, 0, 0.4);
+  background-color: #800000;
+  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.oceania___1iEaU {
-  background-color: rgba(240, 50, 230, 0.4);
+  background-color: #f032e6;
+  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.s_america___iQHqi {
-  background-color: rgba(0, 0, 117, 0.4);
-}
-.app___2khK2 .chart_container___3Jzlm canvas {
-  margin: auto auto;
-  max-width: 90vh;
+  background-color: #000075;
+  opacity: 0.4;
 }
 
