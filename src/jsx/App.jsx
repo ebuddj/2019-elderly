@@ -25,8 +25,8 @@ const order = {
 class App extends Component {
   constructor() {
     super();
-    this.canvas = React.createRef()
     this.state = {
+      active_continents:['Africa','Asia','Europe','N. America','Oceania','S. America'],
       data:{
         datasets:[{
           backgroundColor:[],
@@ -34,11 +34,7 @@ class App extends Component {
         }],
         labels:[]
       },
-      animation: {
-        duration: 500
-      },
-      year:1960,
-      hoveredSection: false
+      year:1960
     }
   }
   componentDidMount() {
@@ -80,7 +76,7 @@ class App extends Component {
       }],
       labels:[]
     };
-    _.each(_.sortBy(data, (country) => { return order[country.continent]; }), (country) => {
+    _.each(_.sortBy(data.filter((value, index, arr) => { if (this.state.active_continents.includes(value.continent)) { return value; }}), (country) => { return order[country.continent]; }), (country) => {
       current_data.datasets[0].data.push(country[this.state.year] * 100);
       current_data.datasets[0].backgroundColor.push(this.getCountryColor(country.continent, country[this.state.year] * 4));
       current_data.datasets[0].borderWidth.push(0);
@@ -91,12 +87,6 @@ class App extends Component {
     }));
   }
   getCountryColor(continent, value) {
-    // rgba(230, 25, 75, 1.0)
-    // rgba(60, 180, 75, 1.0)
-    // rgba(245, 130, 49, 1.0)
-    // rgba(128, 0, 0, 1.0)
-    // rgba(240, 50, 230, 1.0)
-    // rgba(0, 0, 117, 1.0)
     let continentColors = {
       'Africa':'rgba(230, 25, 75, ' + value + ')',
       'Asia':'rgba(60, 180, 75, ' + value + ')',
@@ -107,9 +97,37 @@ class App extends Component {
     }
     return continentColors[continent];
   }
+  selectContinent(continent) {
+    if (this.state.active_continents.includes(continent) === true) {
+      this.setState((state, props) => ({
+        active_continents:this.state.active_continents.filter((value, index, arr) => { if (value !== continent) return value; })
+      }));
+    }
+    else {
+      this.setState((state, props) => ({
+        active_continents:this.state.active_continents.concat(continent)
+      }));
+    }
+  }
   render() {
     let options = {
-      onHover:function(event) {
+      legend: {
+        display: false,
+      },
+      maintainAspectRatio: true,
+      responsive: true,
+      scale: {
+        ticks: {
+          callback:function(value) {
+            return value + '%';
+          },
+          fontFamily: 'verdana',
+          fontSize: 11,
+          fontStyle: 'normal',
+          max: 27,
+          min: 0,
+          stepSize: 3
+        }
       },
       tooltips: {
         enabled: false,
@@ -145,24 +163,6 @@ class App extends Component {
           tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
           tooltipEl.style.pointerEvents = 'none';
         }
-      },
-      responsive: true,
-      scale: {
-        ticks: {
-          callback:function(value) {
-            return value + '%';
-          },
-          fontFamily: 'verdana',
-          fontSize: 11,
-          fontStyle: 'normal',
-          max: 27,
-          min: 0,
-          stepSize: 3
-        }
-      },
-      maintainAspectRatio: true,
-      legend: {
-        display: false,
       }
     }
     let size;
@@ -172,18 +172,19 @@ class App extends Component {
     else {
       size = window.innerHeight
     }
+    let active;
     return (
       <div className={style.app}>
         <h3>Share of over 65 year olds per country in {this.state.year}</h3>
         <div className={style.chart_container}>
-          <Polar ref={this.canvas} data={this.state.data} options={options} width={size} height={size} />
+          <Polar data={this.state.data} options={options} width={size} height={size} />
           <legend>
-            <div className={style.africa}>Africa</div>
-            <div className={style.asia}>Asia</div>
-            <div className={style.europe}>Europe</div>
-            <div className={style.n_america}>N. America</div>
-            <div className={style.oceania}>Oceania</div>
-            <div className={style.s_america}>S. America</div>
+            <div onClick={() => this.selectContinent('Africa')} className={style.africa} style={this.state.active_continents.includes('Africa') ? {opacity: 1} : {}}>Africa</div>
+            <div onClick={() => this.selectContinent('Asia')} className={style.asia} style={this.state.active_continents.includes('Asia') ? {opacity: 1} : {}}>Asia</div>
+            <div onClick={() => this.selectContinent('Europe')} className={style.europe} style={this.state.active_continents.includes('Europe') ? {opacity: 1} : {}}>Europe</div>
+            <div onClick={() => this.selectContinent('N. America')} className={style.n_america} style={this.state.active_continents.includes('N. America') ? {opacity: 1} : {}}>N. America</div>
+            <div onClick={() => this.selectContinent('Oceania')} className={style.oceania} style={this.state.active_continents.includes('Oceania') ? {opacity: 1} : {}}>Oceania</div>
+            <div onClick={() => this.selectContinent('S. America')} className={style.s_america} style={this.state.active_continents.includes('S. America') ? {opacity: 1} : {}}>S. America</div>
           </legend>
         </div>
         <h3>Conclusion:<br />We are getting older</h3>
