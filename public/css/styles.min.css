@@ -66,6 +66,10 @@ body {
   z-index: 2;
 }
 .app___2khK2 .chart_container___3Jzlm legend div {
+  font-family: verdana;
+  font-weight: 600;
+}
+.app___2khK2 .chart_container___3Jzlm legend span {
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -77,22 +81,22 @@ body {
   padding: 5px;
   text-transform: uppercase;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.africa___2MJJ- {
+.app___2khK2 .chart_container___3Jzlm legend span.africa___2MJJ- {
   background-color: #e6194b;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.asia___3VCC9 {
+.app___2khK2 .chart_container___3Jzlm legend span.asia___3VCC9 {
   background-color: #3cb44b;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.europe___2Znoa {
+.app___2khK2 .chart_container___3Jzlm legend span.europe___2Znoa {
   background-color: #f58231;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.n_america___MCqwf {
+.app___2khK2 .chart_container___3Jzlm legend span.n_america___MCqwf {
   background-color: #800000;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.oceania___1iEaU {
+.app___2khK2 .chart_container___3Jzlm legend span.oceania___1iEaU {
   background-color: #f032e6;
 }
-.app___2khK2 .chart_container___3Jzlm legend div.s_america___iQHqi {
+.app___2khK2 .chart_container___3Jzlm legend span.s_america___iQHqi {
   background-color: #000075;
 }
 .app___2khK2 p {
