@@ -171,7 +171,7 @@ class App extends Component {
     let active;
     return (
       <div className={style.app}>
-        <h3>Share of over 65 year olds per country in {this.state.year}</h3>
+        <h3>Share of over 65 year olds per country in <span>{this.state.year}</span></h3>
         <div className={style.chart_container}>
           <Polar data={this.state.data} options={options} width={size} height={size} />
           <legend>
