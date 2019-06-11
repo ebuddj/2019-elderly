@@ -73,34 +73,29 @@ body {
   font-size: 18px;
   letter-spacing: 0.02em;
   margin: 2px 2px;
+  opacity: 0.3;
   padding: 5px;
   text-transform: uppercase;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.africa___2MJJ- {
   background-color: #e6194b;
-  opacity: 0.4;
-}
-.app___2khK2 .chart_container___3Jzlm legend div.africa___2MJJ-.active___39kF0 {
-  opacity: 1;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.asia___3VCC9 {
   background-color: #3cb44b;
-  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.europe___2Znoa {
   background-color: #f58231;
-  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.n_america___MCqwf {
   background-color: #800000;
-  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.oceania___1iEaU {
   background-color: #f032e6;
-  opacity: 0.4;
 }
 .app___2khK2 .chart_container___3Jzlm legend div.s_america___iQHqi {
   background-color: #000075;
-  opacity: 0.4;
+}
+.app___2khK2 p {
+  font-family: verdana;
 }
 
