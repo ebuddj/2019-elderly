@@ -4,6 +4,19 @@ body {
   margin: 0;
   padding: 0;
 }
+.tooltip {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #000;
+  display: block;
+  font-family: verdana;
+  font-size: 11px;
+  opacity: 1;
+  padding: 5px;
+  pointer-events: none;
+  position: absolute;
+  text-transform: uppercase;
+  z-index: 4;
+}
 .app {
   text-align: center;
   h3 {
@@ -12,6 +25,7 @@ body {
     text-transform: uppercase;
   }
   .chart_container {
+    
     canvas {
       position: relative;
       z-index: 1;
@@ -63,6 +77,8 @@ body {
         }
       }
     }
+  }
+  p {
     
   }
 }

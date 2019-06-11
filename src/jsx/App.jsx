@@ -154,14 +154,10 @@ class App extends Component {
           }
           let position = this._chart.canvas.getBoundingClientRect();
           tooltipEl.style.opacity = 1;
-          tooltipEl.style.position = 'absolute';
+          tooltipEl.className = style.tooltip;
           tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
           tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
-          tooltipEl.style.fontFamily = tooltipModel._bodyFontFamily;
-          tooltipEl.style.fontSize = tooltipModel.bodyFontSize + 'px';
-          tooltipEl.style.fontStyle = tooltipModel._bodyFontStyle;
           tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
-          tooltipEl.style.pointerEvents = 'none';
         }
       }
     }
