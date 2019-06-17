@@ -156,8 +156,8 @@ class App extends Component {
           tooltipEl.style.opacity = 1;
           tooltipEl.className = style.tooltip;
           tooltipEl.style.left = position.left + window.pageXOffset + tooltipModel.caretX + 'px';
-          tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
           tooltipEl.style.padding = tooltipModel.yPadding + 'px ' + tooltipModel.xPadding + 'px';
+          tooltipEl.style.top = position.top + window.pageYOffset + tooltipModel.caretY + 'px';
         }
       }
     }
@@ -168,7 +168,6 @@ class App extends Component {
     else {
       size = window.innerHeight
     }
-    let active;
     return (
       <div className={style.app}>
         <h3>Share of over 65 year olds per country in <span>{this.state.year}</span></h3>
