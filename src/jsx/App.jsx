@@ -52,7 +52,7 @@ class App extends Component {
         }
         else {
           self.setState((state, props) => ({
-            year:self.state.year + 1
+            year:state.year + 1
           }), self.updateData);
         }
       }, 500);
