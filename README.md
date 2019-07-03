@@ -6,5 +6,5 @@ The number of elderly people is rising in the world. This visualization shows ho
 
 ## How to use
 
-`npm install`
-`npm start`
+* `npm install`
+* `npm start`
