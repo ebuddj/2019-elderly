@@ -7,8 +7,6 @@ import axios from 'axios';
 // https://underscorejs.org/
 import _ from 'underscore';
 
-import {RadialChart, CircularGridLines, XYPlot, ArcSeries, XAxis, YAxis, MarkSeries} from 'react-vis';
-
 import {Polar} from 'react-chartjs-2';
 
 let data = [];
