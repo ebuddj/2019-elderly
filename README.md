@@ -1,8 +1,12 @@
-# The share of over 65 year olds in the world (EBU)
+# 2019-elderly
 
 **Live demo** https://ebuddj.github.io/2019-elderly/
 
-The number of elderly people is rising in the world. This visualization shows how the share of over 65 year olds has evolved since 1961.
+## The share of over 65 year olds in the world (EBU)
+
+The number of elderly people is rising in the world. This visualization shows how the share of over 65 year olds has evolved by continent and country since 1961.
+
+The rapid increase in Japan, Uruguay and Italy is quite striking.
 
 **Sources**
 * [The World Bank](https://data.worldbank.org/indicator/SP.POP.65UP.TO)
