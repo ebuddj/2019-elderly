@@ -28,11 +28,35 @@ body {
     }
   }
   .chart_container {
+    margin: 5vh auto 5vh auto;
+    position: relative;
     canvas {
-      position: relative;
-      z-index: 1;
       margin: auto auto;
       max-width: 90vh;
+      z-index: 1;
+    }
+    .year_container {
+      left: 0;
+      margin: auto auto;
+      max-height: 90vh;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      .year {
+        font-family: verdana;
+        font-size: 40px;
+        font-weight: bold;
+        height: 100px;
+        left: 50%;
+        line-height: 100px;
+        margin-left: -80px;
+        margin-top: -50px;
+        position: absolute;
+        top: 50%;
+        vertical-align: middle;
+        width: 160px;
+      }
     }
     legend {
       margin-top: -15%;

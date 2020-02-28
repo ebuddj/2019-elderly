@@ -76,7 +76,7 @@ class App extends Component {
     };
     _.each(_.sortBy(data.filter((value, index, arr) => { if (this.state.active_continents.includes(value.continent)) { return value; }}), (country) => { return order[country.continent]; }), (country) => {
       current_data.datasets[0].data.push(country[this.state.year] * 100);
-      current_data.datasets[0].backgroundColor.push(this.getCountryColor(country.continent, country[this.state.year] * 4));
+      current_data.datasets[0].backgroundColor.push(this.getCountryColor(country.continent, country[this.state.year] * 5));
       current_data.datasets[0].borderWidth.push(0);
       current_data.labels.push(country.name);
     });
@@ -160,19 +160,18 @@ class App extends Component {
       }
     }
     let size;
-    if (window.innerWidth < window.innerHeigh) {
-      size = window.innerWidth
+    if (window.innerWidth < window.innerHeight) {
+      size = window.innerWidth;
     }
     else {
-      size = window.innerHeight
+      size = window.innerHeight;
     }
     return (
       <div className={style.app}>
-        <h3>Share of over 65 year olds per country in <span>{this.state.year}</span></h3>
         <div className={style.chart_container}>
           <Polar data={this.state.data} options={options} width={size} height={size} />
+          <div className={style.year_container} style={{height: size + 'px'}}><div className={style.year}>{this.state.year}</div></div>
           <legend>
-            <div>Filter by continent</div>
             <span onClick={() => this.selectContinent('Africa')} className={style.africa} style={this.state.active_continents.includes('Africa') ? {opacity: 1} : {}}>Africa</span>
             <span onClick={() => this.selectContinent('Asia')} className={style.asia} style={this.state.active_continents.includes('Asia') ? {opacity: 1} : {}}>Asia</span>
             <span onClick={() => this.selectContinent('Europe')} className={style.europe} style={this.state.active_continents.includes('Europe') ? {opacity: 1} : {}}>Europe</span>
@@ -181,8 +180,6 @@ class App extends Component {
             <span onClick={() => this.selectContinent('S. America')} className={style.s_america} style={this.state.active_continents.includes('S. America') ? {opacity: 1} : {}}>S. America</span>
           </legend>
         </div>
-        <h3>Conclusion:<br />We are getting older</h3>
-        <p>Source: <a href="https://data.worldbank.org/indicator/SP.POP.65UP.TO">The World Bank</a></p>
       </div>
     );
   }
