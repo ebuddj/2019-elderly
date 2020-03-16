@@ -171,7 +171,7 @@ class App extends Component {
         <div className={style.chart_container}>
           <Polar data={this.state.data} options={options} width={size} height={size} />
           <div className={style.year_container} style={{height: size + 'px'}}><div className={style.year}>{this.state.year}</div></div>
-          <legend>
+          <legend style={{height: size + 'px'}}>
             <span onClick={() => this.selectContinent('Africa')} className={style.africa} style={this.state.active_continents.includes('Africa') ? {opacity: 1} : {}}>Africa</span>
             <span onClick={() => this.selectContinent('Asia')} className={style.asia} style={this.state.active_continents.includes('Asia') ? {opacity: 1} : {}}>Asia</span>
             <span onClick={() => this.selectContinent('Europe')} className={style.europe} style={this.state.active_continents.includes('Europe') ? {opacity: 1} : {}}>Europe</span>
